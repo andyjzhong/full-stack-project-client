@@ -13,19 +13,21 @@
     </head>
     <body class="container-fluid">
 
-      <!-- Creation of navbar -->
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-
+      <!-- Creation of top navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="nav-container">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div> <!-- End nav-container -->
+          <div class="navbar-header">
+            <a href="https://generalassemb.ly/" class="navbar-brand">General Assembly</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div> <!--End Navbar Header-->
 
-        <a href="https://generalassemb.ly/" class="navbar-brand">General Assembly</a>
-      </nav> <!-- End navbar -->
+          <button class="btn btn-primary navbar-btn pull-right">Sign Out</button>
+        </div> <!-- End Navbar Container -->
+      </nav> <!-- End top navbar -->
 
       <h1>Example</h1>
 
@@ -36,5 +38,14 @@
       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.</p>
+
+      <!-- Creation of bottom navbar -->
+      <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="nav-container">
+          <p class="navbar-text">Footer built by Andy Zhong</p>
+        </div> <!-- End nav-container -->
+      </nav> <!-- End bottom navbar -->
+
+
     </body>
 </html>
