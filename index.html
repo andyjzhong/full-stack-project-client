@@ -44,6 +44,71 @@
         </div>
       </div>
 
+      <!-- This is for creating a section for User Management -->
+      <div class="container text-center block">
+        <div class="page-header" id="mgmt">
+          <h2>User Account Management</h2>
+        </div> <!-- End Page-header -->
+
+        <div class="account-banner">Please Sign In or Create an Account</div> <!-- End Banner -->
+
+            <div class="row">
+              <div id="signInForm">
+                <h3>Already Signed Up?</h3>
+                <p>Login with your E-mail and Password</p>
+                <form id="sign-in">
+                  <fieldset>
+                    <legend>Sign in</legend>
+                    <input type="text" name="credentials[email]" id="sign-in-email" placeholder="Your Email Address">
+                    <input type="password" name="credentials[password]" id="sign-in-password" placeholder="Your Password">
+                    <br>
+                    <input class="btn-sm btn-danger" type="submit" name="submit" value="Sign in!">
+                  </fieldset>
+                </form>
+              </div> <!-- End Sign-In Form-->
+            </div> <!-- End Sign-In Row-->
+
+            <div class="row">
+              <div id="signUpForm">
+                <h3>Signing Up is Easy!</h3>
+                <p>Enter Your E-mail and Create a Password</p>
+                <form action="" class="form-inline" id="sign-up">
+                  <div class="form-group">
+                    <input class="col-lg-4 text-center" type="text" name="credentials[email]" id="sign-up-email" placeholder="Your Email Address">
+                    <input class="col-lg-4 text-center" type="password" name="credentials[password]" id="sign-up-password" placeholder="Create a Password">
+                    <input class="col-lg-4 text-center" type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Re-enter Your Password">
+                    <br>
+                    <input class="btn-sm btn-danger" type="submit" name="submit" value="Create Account">
+                  </div> <!-- End Form Group -->
+                </form>
+              </div> <!-- End Sign-Up Form-->
+            </div> <!-- End Sign-Up Row -->
+
+            <div class="row">
+              <div class="col-lg-6" id="signOutForm">
+                <form id="sign-out">
+                  <fieldset>
+                    <legend>Sign out</legend>
+                    <br>
+                    <input class="btn-sm btn-danger" type="submit" name="submit" value="Sign Out!">
+                  </fieldset>
+                </form>
+              </div> <!-- End Sign-Out Form-->
+
+            <div class="col-lg-6" id="changePasswordForm">
+            <form id="change-password">
+              <fieldset>
+                <legend>Change Password</legend>
+                <input type="password" name="passwords[old]" id="old-password" placeholder="Enter Old Password">
+                <input type="password" name="passwords[new]" id="new-password" placeholder="Enter New Password">
+                <input class="btn-sm btn-danger" type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div> <!-- End Change PW Form-->
+      </div> <!-- End Row -->
+    </div> <!-- End Container -->
+    <br>
+
     <!-- Creation of bottom navbar -->
     <nav id="footerid" class="navbar navbar-inverse navbar-fixed-bottom">
       <div class="nav-container">
