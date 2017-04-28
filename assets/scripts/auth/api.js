@@ -44,9 +44,9 @@ const changePassword = (data) => {
 }
 
 // Creates the Ajax function to POST data for new game
-const createGame = (data) => {
+const createCar = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/games/',
+    url: config.apiOrigin + '/cars/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -55,7 +55,7 @@ const createGame = (data) => {
 }
 
 // Creates the Ajax function to PATCHES data into a game id!
-const updateGame = (data) => {
+const updateCar = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -67,7 +67,7 @@ const updateGame = (data) => {
 }
 
 // Creates the Ajax function to POST data for new game!
-const getGames = (id) => {
+const getCars = (id) => {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'GET',
@@ -83,7 +83,7 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
-  createGame,
-  updateGame,
-  getGames
+  createCar,
+  updateCar,
+  getCars
 }

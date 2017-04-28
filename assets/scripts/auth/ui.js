@@ -1,9 +1,8 @@
 'use strict'
 
-const authEvents = require('./events.js')
-const authApi = require('./api.js')
-const authUi = require('./ui.js')
-const authGame = require('../game-logic/game.js')
+// const authEvents = require('./events.js')
+// const authApi = require('./api.js')
+// const authUi = require('./ui.js')
 
 const store = require('../store')
 
@@ -15,10 +14,12 @@ const signUpSuccess = (data) => {
 
 const signUpFailure = (error) => {
   $('.account-banner').text("Username is taken or your passwords don't match.")
+  console.error(error)
 }
 
 const signInSuccess = (data) => {
   store.user = data.user
+  console.log(store.user)
   $('#signOutForm, #changePasswordForm, #createGame, #getGamesPlayed').show()
   $('#signUpForm, #signInForm').hide()
   $('.account-banner').text('You have successfully logged in.')
@@ -53,37 +54,12 @@ const changePasswordFailure = (error) => {
   $('#change-password').find('input:password').val('')
 }
 
-const createGameSuccess = (data) => {
-  $('.box').text('')
-  $('#gameArea').show()
-  $('.game-stats').hide()
-  $('.banner-id').text("Let's Play!")
-  store.game = data.game
-  $('#move_marker_form').val(authGame.currentPlayer)
-  $('#index_form').val(+$(this).attr('id'))
-  $('#game_over_form').val('false')
-  authGame.gameBoard = {}
-  authGame.currentPlayer = 'X'
+const createCarSuccess = (data) => {
+  console.log('createCarSuccess in Ui.js ran')
+  console.log(data)
 }
 
-const createGameFailure = (error) => {
-  console.error(error)
-}
-
-const updateGameSuccess = (id) => {
-}
-
-const updateGameFailure = (error) => {
-  console.error(error)
-}
-
-const getGamesSuccess = (data) => {
-  const count = data.games.length
-  $('.game-stats').show()
-  $('#game-count').text(count)
-}
-
-const getGamesFailure = (error) => {
+const createCarFailure = (error) => {
   console.error(error)
 }
 
@@ -96,10 +72,6 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  createGameSuccess,
-  createGameFailure,
-  updateGameSuccess,
-  updateGameFailure,
-  getGamesSuccess,
-  getGamesFailure
+  createCarSuccess,
+  createCarFailure
 }
