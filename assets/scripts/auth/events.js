@@ -47,7 +47,7 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-// Signup Function
+// Creates a car.
 const onCreateCar = function (event) {
   const data = getFormFields(this)
   console.log(data)
@@ -60,7 +60,7 @@ const onCreateCar = function (event) {
 
 // Updates a car.
 const onUpdateCar = function (event) {
-  console.log('updateCar from Events.js ran.')
+  console.log('onUpdateCar from Events.js ran.')
   event.preventDefault()
   const id = getFormFields(event.target)
   api.updateCar(id)
