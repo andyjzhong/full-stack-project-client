@@ -58,6 +58,16 @@ const onCreateCar = function (event) {
     .catch(ui.createCarFailure)
 }
 
+// Updates a car.
+const onUpdateCar = function (event) {
+  console.log('updateCar from Events.js ran.')
+  event.preventDefault()
+  const id = getFormFields(event.target)
+  api.updateCar(id)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure)
+}
+
 // Creates an event handler to listen for when the submit button is clicked.
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -65,6 +75,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#create-car').on('submit', onCreateCar)
+  $('#update-car').on('submit', onUpdateCar)
 }
 
 // Exports out the addHandlers function.

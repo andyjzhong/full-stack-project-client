@@ -43,8 +43,9 @@ const changePassword = (data) => {
   })
 }
 
-// Creates the Ajax function to POST data for new game
+// Creates the Ajax function to POST data for new car
 const createCar = (data) => {
+  console.log('createCar from Api.js ran.')
   return $.ajax({
     url: config.apiOrigin + '/cars/',
     method: 'POST',
@@ -55,10 +56,11 @@ const createCar = (data) => {
   })
 }
 
-// Creates the Ajax function to PATCHES data into a game id!
+// Creates the Ajax function to PATCHES data into a car id!
 const updateCar = (data) => {
+  console.log('updateCar from Api.js ran.')
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.game.id,
+    url: config.apiOrigin + '/cars/' + store.car.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -67,10 +69,10 @@ const updateCar = (data) => {
   })
 }
 
-// Creates the Ajax function to POST data for new game!
+// Creates the Ajax function to POST data for new car!
 const getCars = (id) => {
   return $.ajax({
-    url: config.apiOrigin + '/games',
+    url: config.apiOrigin + '/cars',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
