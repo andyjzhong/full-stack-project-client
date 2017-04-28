@@ -53,7 +53,7 @@ const onCreateCar = function (event) {
   console.log(data)
   console.log('onCreateCar from Events.js Ran!')
   event.preventDefault()
-  api.signUp(data)
+  api.createCar(data)
     .then(ui.createCarSuccess)
     .catch(ui.createCarFailure)
 }
