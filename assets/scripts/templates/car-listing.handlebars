@@ -1,11 +1,13 @@
 {{#each cars as |car|}}
 
+<div data-id='{{car.id}}'>
   <h1 style="color: white" data-id="{{car.id}}"> <small>{{car.make}} {{car.model}}</small></h1>
   <hr>
   <h2 data-id="{{car.id}}"> <small>Year: {{car.year}}</small></h2>
   <h2 data-id="{{car.id}}"> <small>Color: {{car.color}}</small></h2>
   <input id="update-button" class="btn-sm btn-danger" type="submit" value="Modify Car">
   <br>
-  <input id="sell-button" class="btn-sm btn-danger" type="submit" value="Sell Car">
-
+  <input id="sell-button" class="btn-sm btn-danger sell-button" type="button" name:"sell-button" value="Sell Car">
+  <!-- <button type="button" name="button">Remove</button> -->
+</div>
 {{/each}}

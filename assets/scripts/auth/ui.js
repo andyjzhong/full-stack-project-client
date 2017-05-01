@@ -80,12 +80,11 @@ const showCarsSuccess = (data) => {
   $('.content').html(showCarsHtml)
 
   // add handlers for delete here
-  const events = require('./events')
-  $('#sell-button').on('click', events.onSellCar)
-  console.log('sell-button from Ui.js ran')
-  event.preventDefault()
-  //   $(event.target).parent().parent().remove()
-  // })
+  $('.sell-button').on('click', function (event) {
+    console.log('sell-button from Ui.js ran!')
+    event.preventDefault()
+    $(event.target).parent().remove()
+  })
 }
 
 const showCarsFailure = (error) => {
