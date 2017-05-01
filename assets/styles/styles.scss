@@ -4,11 +4,19 @@ body {
   background-position: center center;
   background-image: url('../images/audi.jpg');
   font-family: 'Lato', sans-serif;
-  color: orange;
+  color: white;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.form-control {
+  margin: 5px;
 }
 
 #navbarid {
-  background: transparent;
+  background: black;
   text-transform: uppercase;
 }
 
@@ -28,8 +36,21 @@ legend {
   margin-right: 10px;
 }
 
+.btn-lg {
+  margin: 20px;
+  width: 150px;
+}
+
 .btn-sm {
   margin: 20px;
+  width: 150px;
+}
+
+.package {
+  background-color: black;
+  padding: 20px;
+  margin-bottom: 200px;
+  opacity: .90;
 }
 
 #footerid {

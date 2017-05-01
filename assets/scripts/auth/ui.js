@@ -4,6 +4,8 @@
 // const authApi = require('./api.js')
 // const authUi = require('./ui.js')
 
+const showCarsTemplate = require('../templates/car-listing.handlebars')
+
 const store = require('../store')
 
 const signUpSuccess = (data) => {
@@ -66,6 +68,8 @@ const createCarFailure = (error) => {
 const showCarsSuccess = (data) => {
   console.log('showCarsSuccess in Ui.js ran')
   console.log(data)
+  const showCarsHtml = showCarsTemplate({ cars: data.cars })
+  $('.content').html(showCarsHtml)
 }
 
 const showCarsFailure = (error) => {
