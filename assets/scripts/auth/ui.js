@@ -37,7 +37,8 @@ const signInFailure = (error) => {
 const signOutSuccess = (data) => {
   store.user = null
   $('#signInForm, #signUpForm').show()
-  $('#signOutForm, #changePasswordForm, .package, .collection').hide()
+  $('#signOutForm, #changePasswordForm, .package, .collection, .content').hide()
+  $('.content').empty()
   $('.account-banner').text('You have successfully logged out.')
 }
 
@@ -69,6 +70,7 @@ const showCarsSuccess = (data) => {
   console.log('showCarsSuccess in Ui.js ran')
   console.log(data)
   const showCarsHtml = showCarsTemplate({ cars: data.cars })
+  $('.content').show()
   $('.content').html(showCarsHtml)
 }
 
@@ -77,12 +79,22 @@ const showCarsFailure = (error) => {
 }
 
 const updateCarSuccess = (id) => {
-  console.log('showCarsSuccess in Ui.js ran')
+  console.log('updateCarSuccess in Ui.js ran')
   console.log(id)
 }
 
 const updateCarFailure = (error) => {
-  console.log('createCarFailure in Ui.js ran')
+  console.log('updateCarFailure in Ui.js ran')
+  console.error(error)
+}
+
+const sellCarSuccess = (id) => {
+  console.log('sellCarSuccess in Ui.js ran')
+  console.log(id)
+}
+
+const sellCarFailure = (error) => {
+  console.log('sellCarFailure in Ui.js ran')
   console.error(error)
 }
 
@@ -100,5 +112,7 @@ module.exports = {
   showCarsSuccess,
   showCarsFailure,
   updateCarSuccess,
-  updateCarFailure
+  updateCarFailure,
+  sellCarSuccess,
+  sellCarFailure
 }

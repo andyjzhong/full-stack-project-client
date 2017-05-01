@@ -80,6 +80,19 @@ const showCars = (data) => {
   })
 }
 
+// Creates the Ajax function to PATCHES data into a car id!
+const sellCar = (data) => {
+  console.log('sellCar from Api.js ran.')
+  return $.ajax({
+    url: config.apiOrigin + '/cars/' + store.car.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 // Exports out the signUp Ajax function.
 module.exports = {
   signUp,
@@ -88,5 +101,6 @@ module.exports = {
   changePassword,
   createCar,
   updateCar,
-  showCars
+  showCars,
+  sellCar
 }

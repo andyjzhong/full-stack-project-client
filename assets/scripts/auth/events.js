@@ -73,14 +73,24 @@ const onShowCars = function (event) {
     .catch(ui.showCarsFailure)
 }
 
+// Delete a car.
+const onSellCar = function (event) {
+  console.log('onSellCar from Events.js ran.')
+  event.preventDefault()
+  const id = getFormFields(event.target)
+  api.sellCar(id)
+    .then(ui.sellCarSuccess)
+    .catch(ui.sellCarFailure)
+}
+
 // Updates a car.
 const onUpdateCar = function (event) {
   console.log('onUpdateCar from Events.js ran.')
   event.preventDefault()
   const id = getFormFields(event.target)
   api.updateCar(id)
-    .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure)
+    .then(ui.updateCarSuccess)
+    .catch(ui.updateCarFailure)
 }
 
 // Creates an event handler to listen for when the submit button is clicked.
@@ -92,6 +102,7 @@ const addHandlers = () => {
   $('#create-car').on('submit', onCreateCar)
   $('#show-button').on('click', onShowCars)
   $('#update-car').on('submit', onUpdateCar)
+  $('#sell-car').on('submit', onSellCar)
 }
 
 // Exports out the addHandlers function.
