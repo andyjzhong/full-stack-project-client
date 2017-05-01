@@ -7,6 +7,12 @@ const api = require('./api')
 // Goes and gets the info from the ui.js file.
 const ui = require('./ui')
 
+const setUpPage = function () {
+  console.log('setUpPage from Events.js ran!')
+  $('#signUpForm, #signInForm, #signOutForm, #changePasswordForm').show()
+  $('#signOutForm, #changePasswordForm, .package, .collection').hide()
+}
+
 // Signup Function
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -90,5 +96,6 @@ const addHandlers = () => {
 
 // Exports out the addHandlers function.
 module.exports = {
-  addHandlers
+  addHandlers,
+  setUpPage
 }

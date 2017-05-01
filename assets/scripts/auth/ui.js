@@ -22,7 +22,7 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user)
-  $('#signOutForm, #changePasswordForm, #createGame, #getGamesPlayed').show()
+  $('#signOutForm, #changePasswordForm, .package, .collection').show()
   $('#signUpForm, #signInForm').hide()
   $('.account-banner').text('You have successfully logged in.')
   $('#sign-in').find('input:text, input:password').val('')
@@ -37,7 +37,7 @@ const signInFailure = (error) => {
 const signOutSuccess = (data) => {
   store.user = null
   $('#signInForm, #signUpForm').show()
-  $('#signOutForm, #changePasswordForm, #createGame, #gameArea, #getGamesPlayed, .game-stats').hide()
+  $('#signOutForm, #changePasswordForm, .package, .collection').hide()
   $('.account-banner').text('You have successfully logged out.')
 }
 

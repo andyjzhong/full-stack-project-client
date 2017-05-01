@@ -18,4 +18,5 @@ const authEvents = require('./auth/events.js')
 // On document ready, execute event handlers.
 $(() => {
   authEvents.addHandlers()
+  authEvents.setUpPage()
 })
