@@ -63,8 +63,17 @@ const createCarFailure = (error) => {
   console.error(error)
 }
 
+const showCarsSuccess = (data) => {
+  console.log('showCarsSuccess in Ui.js ran')
+  console.log(data)
+}
+
+const showCarsFailure = (error) => {
+  console.error(error)
+}
+
 const updateCarSuccess = (id) => {
-  console.log('createCarSuccess in Ui.js ran')
+  console.log('showCarsSuccess in Ui.js ran')
   console.log(id)
 }
 
@@ -84,6 +93,8 @@ module.exports = {
   changePasswordFailure,
   createCarSuccess,
   createCarFailure,
+  showCarsSuccess,
+  showCarsFailure,
   updateCarSuccess,
   updateCarFailure
 }

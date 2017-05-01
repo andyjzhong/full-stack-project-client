@@ -58,6 +58,15 @@ const onCreateCar = function (event) {
     .catch(ui.createCarFailure)
 }
 
+// Shows all cars.
+const onShowCars = function (event) {
+  console.log('onShowCars from Events.js ran.')
+  event.preventDefault()
+  api.showCars()
+    .then(ui.showCarsSuccess)
+    .catch(ui.showCarsFailure)
+}
+
 // Updates a car.
 const onUpdateCar = function (event) {
   console.log('onUpdateCar from Events.js ran.')
@@ -75,6 +84,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#create-car').on('submit', onCreateCar)
+  $('#show-button').on('click', onShowCars)
   $('#update-car').on('submit', onUpdateCar)
 }
 

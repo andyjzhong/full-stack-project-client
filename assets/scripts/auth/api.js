@@ -70,7 +70,7 @@ const updateCar = (data) => {
 }
 
 // Creates the Ajax function to POST data for new car!
-const getCars = (id) => {
+const showCars = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/cars',
     method: 'GET',
@@ -88,5 +88,5 @@ module.exports = {
   changePassword,
   createCar,
   updateCar,
-  getCars
+  showCars
 }
