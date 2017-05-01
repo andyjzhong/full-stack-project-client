@@ -9,7 +9,7 @@ const showCarsTemplate = require('../templates/car-listing.handlebars')
 const store = require('../store')
 
 const signUpSuccess = (data) => {
-  $('.account-banner').text('You have successfully created an account. Log in to Play!')
+  $('.account-banner').text('You have successfully created an account. Log in to manage cars.')
   $('#signUpForm').hide()
   $('#sign-up').find('input:text, input:password').val('')
 }
@@ -69,11 +69,23 @@ const createCarSuccess = (data) => {
 const createCarFailure = (error) => {
   console.error(error)
   $('#create-car').find('input:text').val('')
+  $('.collection-banner').text('You must enter data to all fields.')
+}
+
+const sellCarSuccess = (id) => {
+  console.log('sellCarSuccess in Ui.js ran')
+  console.log(id)
+}
+
+const sellCarFailure = (error) => {
+  console.log('sellCarFailure in Ui.js ran')
+  console.error(error)
 }
 
 const showCarsSuccess = (data) => {
   console.log('showCarsSuccess from Ui.js ran')
   console.log(data)
+  $('.collection-banner').text('Enter Car Info Below to Add to Collection')
   // Shows the content in your collection.
   const showCarsHtml = showCarsTemplate({ cars: data.cars })
   $('.content').show()
@@ -82,8 +94,14 @@ const showCarsSuccess = (data) => {
   // Removes object from the current listing
   $('.sell-button').on('click', function (event) {
     console.log('sell-button from Ui.js ran!')
+    console.log(data)
     event.preventDefault()
     $(event.target).parent().remove()
+    // Ajax Request from API to delete car. ???
+    const api = require('./api')
+    api.sellCar(data)
+      .then(sellCarSuccess)
+      .catch(sellCarFailure)
   })
 }
 
@@ -98,16 +116,6 @@ const updateCarSuccess = (id) => {
 
 const updateCarFailure = (error) => {
   console.log('updateCarFailure in Ui.js ran')
-  console.error(error)
-}
-
-const sellCarSuccess = (id) => {
-  console.log('sellCarSuccess in Ui.js ran')
-  console.log(id)
-}
-
-const sellCarFailure = (error) => {
-  console.log('sellCarFailure in Ui.js ran')
   console.error(error)
 }
 
