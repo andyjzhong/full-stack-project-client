@@ -79,7 +79,7 @@ const showCarsSuccess = (data) => {
   $('.content').show()
   $('.content').html(showCarsHtml)
 
-  // add handlers for delete here
+  // Removes object from the current listing
   $('.sell-button').on('click', function (event) {
     console.log('sell-button from Ui.js ran!')
     event.preventDefault()
