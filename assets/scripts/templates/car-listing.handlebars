@@ -1,9 +1,7 @@
 {{#each cars as |car|}}
 
-  <h1 style="color: white" data-id="{{car.id}}"> <small>Id: {{car.id}}</small></h1>
+  <h1 style="color: white" data-id="{{car.id}}"> <small>{{car.make}} {{car.model}}</small></h1>
   <hr>
-  <h2 data-id="{{car.id}}"> <small>Make: {{car.make}}</small></h2>
-  <h2 data-id="{{car.id}}"> <small>Model: {{car.model}}</small></h2>
   <h2 data-id="{{car.id}}"> <small>Year: {{car.year}}</small></h2>
   <h2 data-id="{{car.id}}"> <small>Color: {{car.color}}</small></h2>
   <input id="update-button" class="btn-sm btn-danger" type="submit" value="Modify Car">

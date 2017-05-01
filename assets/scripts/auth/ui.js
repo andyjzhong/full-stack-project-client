@@ -60,10 +60,13 @@ const changePasswordFailure = (error) => {
 const createCarSuccess = (data) => {
   console.log('createCarSuccess in Ui.js ran')
   console.log(data)
+  $('#create-car').find('input:text').val('')
+  $('.content').hide()
 }
 
 const createCarFailure = (error) => {
   console.error(error)
+  $('#create-car').find('input:text').val('')
 }
 
 const showCarsSuccess = (data) => {
