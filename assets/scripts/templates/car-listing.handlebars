@@ -1,13 +1,13 @@
 {{#each cars as |car|}}
 
-  <h1 data-id="{{car.id}}"> <small>Title: {{car.make}}</small></h1>
-
-  <!-- <div>
-    {{#if car.description}}
-      {{car.description}}
-    {{else}}
-      No description.
-    {{/if}}
-  </div> -->
+  <h1 style="color: white" data-id="{{car.id}}"> <small>Id: {{car.id}}</small></h1>
+  <hr>
+  <h2 data-id="{{car.id}}"> <small>Make: {{car.make}}</small></h2>
+  <h2 data-id="{{car.id}}"> <small>Model: {{car.model}}</small></h2>
+  <h2 data-id="{{car.id}}"> <small>Year: {{car.year}}</small></h2>
+  <h2 data-id="{{car.id}}"> <small>Color: {{car.color}}</small></h2>
+  <input id="update-button" class="btn-sm btn-danger" type="submit" value="Update Car">
+  <br>
+  <input id="sell-button" class="btn-sm btn-danger" type="submit" value="Sell Car">
 
 {{/each}}
