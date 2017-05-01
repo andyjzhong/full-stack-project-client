@@ -37,6 +37,7 @@ const signInFailure = (error) => {
 const signOutSuccess = (data) => {
   store.user = null
   $('#signInForm, #signUpForm').show()
+  $('.collection-banner').text('Enter Car Info Below to Add to Collection')
   $('#signOutForm, #changePasswordForm, .package, .collection, .content').hide()
   $('.content').empty()
   $('.account-banner').text('You have successfully logged out.')
@@ -58,8 +59,9 @@ const changePasswordFailure = (error) => {
 }
 
 const createCarSuccess = (data) => {
-  console.log('createCarSuccess in Ui.js ran')
+  console.log('createCarSuccess from Ui.js ran')
   console.log(data)
+  $('.collection-banner').text('You have successfully recorded your new car.')
   $('#create-car').find('input:text').val('')
   $('.content').hide()
 }
@@ -70,11 +72,20 @@ const createCarFailure = (error) => {
 }
 
 const showCarsSuccess = (data) => {
-  console.log('showCarsSuccess in Ui.js ran')
+  console.log('showCarsSuccess from Ui.js ran')
   console.log(data)
+  // Shows the content in your collection.
   const showCarsHtml = showCarsTemplate({ cars: data.cars })
   $('.content').show()
   $('.content').html(showCarsHtml)
+
+  // add handlers for delete here
+  const events = require('./events')
+  $('#sell-button').on('click', events.onSellCar)
+  console.log('sell-button from Ui.js ran')
+  event.preventDefault()
+  //   $(event.target).parent().parent().remove()
+  // })
 }
 
 const showCarsFailure = (error) => {
