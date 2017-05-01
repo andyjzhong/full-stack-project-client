@@ -96,10 +96,11 @@ const showCarsSuccess = (data) => {
     console.log('sell-button from Ui.js ran!')
     console.log(data)
     event.preventDefault()
+    const carId = $(event.target).parent().attr('data-id')
     $(event.target).parent().remove()
     // Ajax Request from API to delete car. ???
     const api = require('./api')
-    api.sellCar(data)
+    api.sellCar(carId)
       .then(sellCarSuccess)
       .catch(sellCarFailure)
   })

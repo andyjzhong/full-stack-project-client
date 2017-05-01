@@ -81,15 +81,14 @@ const showCars = (data) => {
 }
 
 // Creates the Ajax function to PATCHES data into a car id!
-const sellCar = (data) => {
+const sellCar = (carId) => {
   console.log('sellCar from Api.js ran.')
   return $.ajax({
-    url: config.apiOrigin + '/cars/' + store.car.id,
+    url: config.apiOrigin + '/cars/' + carId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 

@@ -36,6 +36,16 @@ legend {
   padding-top: 100px;
 }
 
+.mgmt-container {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+#sign-in {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 .welcome {
   margin-bottom: 110px;
 }
@@ -58,12 +68,19 @@ legend {
 .package {
   background-color: black;
   padding: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
   opacity: .90;
 }
 
 .collection, .content {
   margin-bottom: 100px;
   color: #d4af37;
+}
+
+.collection {
+  padding-left: 350px;
+  padding-right: 350px;
 }
 
 #footerid {
