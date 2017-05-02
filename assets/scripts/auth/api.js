@@ -65,7 +65,7 @@ const updateCar = (carId, data) => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: data
   })
 }
 

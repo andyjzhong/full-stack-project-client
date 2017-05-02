@@ -87,9 +87,9 @@ const onSellCar = function (event) {
 const onUpdateCar = function (event) {
   console.log('onUpdateCar from Events.js ran.')
   event.preventDefault()
-  console.log(data)
   const data = getFormFields(this)
   console.log(data)
+  console.log('Why isnt the data correct?')
   api.updateCar(data)
     .then(ui.updateCarSuccess)
     .catch(ui.updateCarFailure)
@@ -110,5 +110,6 @@ const addHandlers = () => {
 // Exports out the addHandlers function.
 module.exports = {
   addHandlers,
-  setUpPage
+  setUpPage,
+  onUpdateCar
 }
