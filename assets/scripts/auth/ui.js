@@ -110,25 +110,29 @@ const showCarsSuccess = (data) => {
   $('.mod-button').on('click', function (event) {
     console.log('mod-button from Ui.js ran!')
     event.preventDefault()
-    const carId = $(event.target).parent().attr('data-id')
-    $('.save-button, .mod-car, .cancel-button').show()
-    $('.mod-button').hide()
+    // const carId = $(event.target).parent().attr('data-id')
+    $(event.target).siblings('.save-button, .mod-car, .cancel-button').show()
+    $('.mod-button, .sell-button').hide()
   })
 
   // Cancel Button Hide/Show button
   $('.cancel-button').on('click', function (event) {
     console.log('cancel-button from Ui.js ran!')
     event.preventDefault()
-    $('.mod-button').show()
-    $('.save-button, .mod-car, .cancel-button').hide()
+    $(event.target).siblings('.mod-button').show()
+    $(event.target).siblings('.save-button, .mod-car').hide()
+    $('.cancel-button').hide()
+    $('.mod-button, .sell-button').show()
   })
 
   // Save Button Hide/Show button
   $('.save-button').on('click', function (event) {
     console.log('save-button from Ui.js ran!')
     event.preventDefault()
-    $('.mod-button, .save-banner').show()
-    $('.save-button, .mod-car, .cancel-button').hide()
+    $(event.target).siblings('.mod-button, .save-banner').show()
+    $(event.target).siblings('.save-button, .mod-car, .cancel-button').hide()
+    $('.save-button').hide()
+    $('.mod-button, .sell-button').show()
   })
 }
 
