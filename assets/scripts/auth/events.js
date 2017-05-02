@@ -87,8 +87,10 @@ const onSellCar = function (event) {
 const onUpdateCar = function (event) {
   console.log('onUpdateCar from Events.js ran.')
   event.preventDefault()
-  const id = getFormFields(event.target)
-  api.updateCar(id)
+  console.log(data)
+  const data = getFormFields(this)
+  console.log(data)
+  api.updateCar(data)
     .then(ui.updateCarSuccess)
     .catch(ui.updateCarFailure)
 }
@@ -101,7 +103,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#create-car').on('submit', onCreateCar)
   $('#show-button').on('click', onShowCars)
-  $('#update-car').on('submit', onUpdateCar)
+  $('#mod-car').on('submit', onUpdateCar)
   $('#sell-car').on('submit', onSellCar)
 }
 

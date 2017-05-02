@@ -57,10 +57,10 @@ const createCar = (data) => {
 }
 
 // Creates the Ajax function to PATCHES data into a car id!
-const updateCar = (data) => {
+const updateCar = (carId, data) => {
   console.log('updateCar from Api.js ran.')
   return $.ajax({
-    url: config.apiOrigin + '/cars/' + store.car.id,
+    url: config.apiOrigin + '/cars/' + carId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
