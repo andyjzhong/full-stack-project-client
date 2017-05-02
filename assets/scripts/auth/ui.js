@@ -112,7 +112,7 @@ const showCarsSuccess = (data) => {
     event.preventDefault()
     // const carId = $(event.target).parent().attr('data-id')
     $(event.target).siblings('.save-button, .mod-car, .cancel-button').show()
-    $('.mod-button, .sell-button').hide()
+    $('.mod-button, .sell-button, .save-banner').hide()
   })
 
   // Cancel Button Hide/Show button
@@ -129,6 +129,19 @@ const showCarsSuccess = (data) => {
   $('.save-button').on('click', function (event) {
     console.log('save-button from Ui.js ran!')
     event.preventDefault()
+
+    // Function for Updating Car Color
+    const carId = $(event.target).parent().attr('data-id')
+    const api = require('./api')
+    const events = require('./events')
+    const getFormFields = require(`../../../lib/get-form-fields`)
+    const data = getFormFields(event.target)
+    console.log(carId)
+    console.log(data)
+    api.updateCar(carId, data)
+      .then(updateCarSuccess)
+      .catch(updateCarFailure)
+
     $(event.target).siblings('.mod-button, .save-banner').show()
     $(event.target).siblings('.save-button, .mod-car, .cancel-button').hide()
     $('.save-button').hide()
