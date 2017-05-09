@@ -125,31 +125,36 @@ const showCarsSuccess = (data) => {
     $('.mod-button, .sell-button').show()
   })
 
-  // Save Button Hide/Show button
-  $('.save-button').on('click', function (event) {
-    console.log('save-button from Ui.js ran!')
-    event.preventDefault()
+  // Save Button Update Request
+  const events = require('./update2')
+  $('#mod-car').on('submit', events.onUpdateCar)
+  console.log('save-button from Ui.js ran!')
+    // event.preventDefault()
 
-    // Function for Updating Car Color
-    const carId = $(event.target).parent().attr('data-id')
-    const api = require('./api')
-    const events = require('./events')
-    $('#mod-car').on('submit', events.onUpdateCar)
-    const getFormFields = require(`../../../lib/get-form-fields`)
-    const data = getFormFields(event.target)
-    console.log(carId)
-    console.log('WHY CANT I PASS IN FORM DATA?')
-    debugger
-    // $(this).parent().children().find('input').val()
-    api.updateCar(carId, data)
-      .then(updateCarSuccess)
-      .catch(updateCarFailure)
-
-    $(event.target).siblings('.mod-button, .save-banner').show()
-    $(event.target).siblings('.save-button, .mod-car, .cancel-button').hide()
-    $('.save-button').hide()
-    $('.mod-button, .sell-button').show()
-  })
+  // $('.save-button').on('submit', function (event) {
+  //   console.log('save-button from Ui.js ran!')
+  //   event.preventDefault()
+  //
+  //   // Function for Updating Car Color
+  //   const carId = $(event.target).parent().attr('data-id')
+  //   const api = require('./api')
+  //   const events = require('./events')
+  //   $('#mod-car').on('submit', events.onUpdateCar)
+  //   const getFormFields = require(`../../../lib/get-form-fields`)
+  //   console.log(carId)
+  //   console.log(data)
+  //   console.log($(this).parent().children().find('input').val())
+  //   const data = getFormFields(event.target)
+  //
+  //   api.updateCar(carId, data)
+  //     .then(updateCarSuccess)
+  //     .catch(updateCarFailure)
+  //
+  //   $(event.target).siblings('.mod-button, .save-banner').show()
+  //   $(event.target).siblings('.save-button, .mod-car, .cancel-button').hide()
+  //   $('.save-button').hide()
+  //   $('.mod-button, .sell-button').show()
+  // })
 }
 
 const showCarsFailure = (error) => {
