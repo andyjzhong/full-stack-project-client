@@ -139,6 +139,8 @@ const showCarsSuccess = (data) => {
     const data = getFormFields(event.target)
     console.log(carId)
     console.log('WHY CANT I PASS IN FORM DATA?')
+    debugger
+    // $(this).parent().children().find('input').val()
     api.updateCar(carId, data)
       .then(updateCarSuccess)
       .catch(updateCarFailure)
