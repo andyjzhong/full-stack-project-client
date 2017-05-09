@@ -8,16 +8,13 @@
   <input id="mod-button" class="btn-sm btn-primary mod-button" type="button" name:"mod-button" value="Modify Car">
 
   <!-- Important to Hide/Show -->
-  <div class="container col-sm-12 text-center mod-car">
-    <form id="mod-car" class="col-sm-12">
-      <input id= data-andy="{{car.id}}" class="text-center form-control col-xs-12" type="text" name="car[color]" placeholder="Enter New Color">
-      <input class="btn-sm btn-success AZ" type="submit" value="AZ">
-</div>
-
-  <input class="btn-sm btn-success save-button" type="submit" value="Save Changes">
-</form>
-  <input class="btn-sm btn-warning cancel-button" type="button" name:"cancel-button" value="Cancel">
-
+  <div class="container col-sm-12 text-center">
+    <form class="mod-car" class="col-sm-12">
+      <input class="text-center form-control col-xs-12" type="text" name="car[color]" placeholder="Enter New Color">
+      <input class="btn-sm btn-success save-button" type="submit" value="Save Changes">
+    </form>
+    <input class="btn-sm btn-warning cancel-button" type="button" name:"cancel-button" value="Cancel">
+  </div>
 
 
   <input class="btn-sm btn-danger sell-button" type="button" name:"sell-button" value="Sell Car">

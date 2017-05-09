@@ -90,7 +90,7 @@ const showCarsSuccess = (data) => {
   const showCarsHtml = showCarsTemplate({ cars: data.cars })
   $('.content').show()
   $('.content').html(showCarsHtml)
-  $('.save-button, .mod-car, .cancel-button, .save-banner').hide()
+  // $('.save-button, .mod-car, .cancel-button, .save-banner').hide()
 
   // Removes object from the current listing
   $('.sell-button').on('click', function (event) {
@@ -99,7 +99,6 @@ const showCarsSuccess = (data) => {
     event.preventDefault()
     const carId = $(event.target).parent().attr('data-id')
     $(event.target).parent().remove()
-    // Ajax Request from API to delete car. ???
     const api = require('./api')
     api.sellCar(carId)
       .then(sellCarSuccess)
@@ -127,7 +126,7 @@ const showCarsSuccess = (data) => {
 
   // Save Button Update Request
   const events = require('./update2')
-  $('#mod-car').on('submit', events.onUpdateCar)
+  $('.mod-car').on('submit', events.onUpdateCar)
   console.log('save-button from Ui.js ran!')
     // event.preventDefault()
 
@@ -161,9 +160,9 @@ const showCarsFailure = (error) => {
   console.error(error)
 }
 
-const updateCarSuccess = (id) => {
-  console.log('updateCarSuccess in Ui.js ran')
-  console.log(id)
+const updateCarSuccess = (data) => {
+  console.log(data)
+  console.log('Spongebob')
 }
 
 const updateCarFailure = (error) => {
