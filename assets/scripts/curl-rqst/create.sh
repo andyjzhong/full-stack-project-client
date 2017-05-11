@@ -1,4 +1,4 @@
-#TOKEN='BAhJIiVhM2VhZDUzNWM4YzEzOTkxMzY1NWYyYjFiNTk5NTM4MQY6BkVG--404255de9d79fe1d99d8f2103d7311d57006a6c7' TEXT='test ability to create' sh scripts/cars/create.sh
+#TOKEN='BAhJIiVhM2VhZDUzNWM4YzEzOTkxMzY1NWYyYjFiNTk5NTM4MQY6BkVG--404255de9d79fe1d99d8f2103d7311d57006a6c7' MAKE='make-test' MODEL='model-test' YEAR=2000 COLOR='color-test'sh scripts/curl-rqst/create.sh
 
 API="${API_ORIGIN:-http://localhost:4741}"
 URL_PATH="/cars"
@@ -8,7 +8,10 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
-    "idea": {
-      "content": "'"${TEXT}"'"
+    "car": {
+      "make": "'"${MAKE}"'",
+      "model": "'"${MODEL}"'",
+      "year": "'"${YEAR}"'",
+      "color": "'"${COLOR}"'"
     }
   }'
