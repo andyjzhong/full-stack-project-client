@@ -90,6 +90,7 @@ const showCarsSuccess = (data) => {
   const showCarsHtml = showCarsTemplate({ cars: data.cars })
   $('.content').show()
   $('.content').html(showCarsHtml)
+  $('.update-area, .save-banner').hide()
   // $('.save-button, .mod-car, .cancel-button, .save-banner').hide()
 
   // Removes object from the current listing
@@ -111,6 +112,7 @@ const showCarsSuccess = (data) => {
     event.preventDefault()
     // const carId = $(event.target).parent().attr('data-id')
     $(event.target).siblings('.save-button, .mod-car, .cancel-button').show()
+    $(event.target).siblings('.update-area').show()
     $('.mod-button, .sell-button, .save-banner').hide()
   })
 
@@ -118,16 +120,22 @@ const showCarsSuccess = (data) => {
   $('.cancel-button').on('click', function (event) {
     console.log('cancel-button from Ui.js ran!')
     event.preventDefault()
-    $(event.target).siblings('.mod-button').show()
-    $(event.target).siblings('.save-button, .mod-car').hide()
-    $('.cancel-button').hide()
     $('.mod-button, .sell-button').show()
+    $('.update-area').hide()
+    $('.mod-car').find('input:text').val('')
+    // $(event.target).siblings('.mod-button').show()
+    // $(event.target).siblings('.save-button, .mod-car').hide()
+    // $('.cancel-button').hide()
+    // $('.update-area, .mod-button, .sell-button').show()
   })
 
   // Save Button Update Request
   const events = require('./update2')
   $('.mod-car').on('submit', events.onUpdateCar)
-  console.log('save-button from Ui.js ran!')
+  console.log('This is a Check')
+  $('.save-banner').hide()
+  // $(event.target).siblings('.update-area').hide()
+  // $('.mod-button, .sell-button').show()
     // event.preventDefault()
 
   // $('.save-button').on('submit', function (event) {
@@ -168,6 +176,7 @@ const updateCarSuccess = (data) => {
 const updateCarFailure = (error) => {
   console.log('updateCarFailure in Ui.js ran')
   console.error(error)
+  $('.save-banner').text('Please enter a color.')
 }
 
 module.exports = {
