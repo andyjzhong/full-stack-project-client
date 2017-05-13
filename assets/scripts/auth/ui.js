@@ -8,6 +8,8 @@ const showCarsTemplate = require('../templates/car-listing.handlebars')
 
 const store = require('../store')
 
+const modify = require('./update2')
+
 const signUpSuccess = (data) => {
   $('.account-banner').text('You have successfully created an account. Log in to manage cars.')
   $('#signUpForm').hide()
@@ -130,10 +132,10 @@ const showCarsSuccess = (data) => {
   })
 
   // Save Button Update Request
-  const events = require('./update2')
-  $('.mod-car').on('submit', events.onUpdateCar)
+  $('.mod-car').on('submit', modify.onUpdateCar)
   console.log('This is a Check')
-  $('.save-banner').hide()
+  console.log($('.update-area'))
+  $('.update-area').hide()
   // $(event.target).siblings('.update-area').hide()
   // $('.mod-button, .sell-button').show()
     // event.preventDefault()
