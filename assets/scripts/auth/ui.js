@@ -25,7 +25,7 @@ const signInSuccess = (data) => {
   store.user = data.user
   console.log(store.user)
   $('#signOutForm, #changePasswordForm, .package, .collection').show()
-  $('#signUpForm, #signInForm').hide()
+  $('#signUpForm, #signInForm, .save-banner').hide()
   $('.account-banner').text('You have successfully logged in.')
   $('#sign-in').find('input:text, input:password').val('')
 }
@@ -40,7 +40,7 @@ const signOutSuccess = (data) => {
   store.user = null
   $('#signInForm, #signUpForm').show()
   $('.collection-banner').text('Enter Car Info Below to Add to Collection')
-  $('#signOutForm, #changePasswordForm, .package, .collection, .content').hide()
+  $('#signOutForm, #changePasswordForm, .package, .collection, .content, .save-banner').hide()
   $('.content').empty()
   $('.account-banner').text('You have successfully logged out.')
 }
