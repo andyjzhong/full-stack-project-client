@@ -7,19 +7,10 @@ const api = require('./api')
 // Goes and gets the info from the ui.js file.
 const ui = require('./ui')
 
-// const events = require('./events')
-// $('.save-button').on('submit', events.onUpdateCar)
-// console.log('save-button from Ui.js ran!')
-
 // Updates a car.
 const onUpdateCar = function (event) {
-  console.log('onUpdateCar from Update2Events.js ran.')
-  console.log($(this).parent().parent().attr('data-id'))
-  console.log(event)
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
-  console.log('Maybe pass it in here?')
   $('.update-area, #content').hide()
   $('.sell-button, .mod-button, .save-banner').show()
   const carId = $(this).parent().parent().attr('data-id')

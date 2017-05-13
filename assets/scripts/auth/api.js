@@ -45,7 +45,6 @@ const changePassword = (data) => {
 
 // Creates the Ajax function to POST data for new car
 const createCar = (data) => {
-  console.log('createCar from Api.js ran.')
   return $.ajax({
     url: config.apiOrigin + '/cars/',
     method: 'POST',
@@ -58,8 +57,6 @@ const createCar = (data) => {
 
 // Creates the Ajax function to PATCHES data into a car id!
 const updateCar = (carId, data) => {
-  console.log(data)
-  console.log('updateCar from Api.js ran.')
   return $.ajax({
     url: config.apiOrigin + '/cars/' + carId,
     method: 'PATCH',
@@ -83,7 +80,6 @@ const showCars = (data) => {
 
 // Creates the Ajax function to PATCHES data into a car id!
 const sellCar = (carId) => {
-  console.log('sellCar from Api.js ran.')
   return $.ajax({
     url: config.apiOrigin + '/cars/' + carId,
     method: 'DELETE',
