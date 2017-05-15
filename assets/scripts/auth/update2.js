@@ -11,7 +11,7 @@ const ui = require('./ui')
 const onUpdateCar = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  $('.update-area, #content').hide()
+  $('.update-area, #content, .delete-banner').hide()
   $('.sell-button, .mod-button, .save-banner').show()
   const carId = $(this).parent().parent().attr('data-id')
   api.updateCar(carId, data)
