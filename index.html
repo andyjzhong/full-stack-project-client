@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>My Garage</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <!-- Creation of top navbar -->
+      <nav id="navbarid" class="navbar navbar-default navbar-fixed-top">
+        <div class="nav-container">
+          <div class="navbar-header">
+            <a href="https://generalassemb.ly/" class="navbar-brand">General Assembly</a>
+          </div> <!--End Navbar Header-->
+
+        </div> <!-- End Navbar Container -->
+      </nav> <!-- End top navbar -->
+
+      <div id="main">
+        <div class="container text-center block welcome">
+          <h1>Welcome to Your Garage</h1>
+        </div>
+      </div>
+
+      <!-- This is for creating a section for User Management -->
+      <div class="container text-center block mgmt-container">
+        <div class="page-header" id="mgmt">
+          <h2>User Account Management</h2>
+        </div> <!-- End Page-header -->
+
+        <div class="account-banner">Please Sign In or Create an Account</div> <!-- End Banner -->
+        <br>
+
+            <div class="row">
+              <div id="signInForm">
+                <h3>Already Signed Up?</h3>
+                <p>Login with your E-mail and Password</p>
+                <form id="sign-in">
+                  <fieldset>
+                    <legend>Sign in</legend>
+                    <input class="col-sm-4 text-center form-control" type="text" name="credentials[email]" id="sign-in-email" placeholder="Your Email Address">
+                    <input class="col-sm-4 text-center form-control" type="password" name="credentials[password]" id="sign-in-password" placeholder="Your Password">
+                    <br>
+                    <input class="btn-lg btn-primary" type="submit" name="submit" value="Sign in">
+                  </fieldset>
+                </form>
+              </div> <!-- End Sign-In Form-->
+            </div> <!-- End Sign-In Row-->
+
+            <div class="row">
+              <div id="signUpForm">
+                <h3>Signing Up is Easy!</h3>
+                <p>Enter Your E-mail and Create a Password</p>
+
+                <form action="" class="form-inline" id="sign-up">
+                  <div class="form-group">
+                    <input class="col-lg-4 text-center form-control" type="text" name="credentials[email]" id="sign-up-email" placeholder="Your Email Address">
+                    <input class="col-lg-4 text-center form-control" type="password" name="credentials[password]" id="sign-up-password" placeholder="Create a Password">
+                    <input class="col-lg-4 text-center form-control" type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Re-enter Your Password">
+                    <br>
+                    <input class="btn-lg btn-primary text-center" type="submit" name="submit" value="Create Account">
+                  </div> <!-- End Form Group -->
+                </form>
+              </div> <!-- End Sign-Up Form-->
+            </div> <!-- End Sign-Up Row -->
+
+            <div class="row">
+              <div class="col-lg-6" id="signOutForm">
+                <form id="sign-out">
+                  <fieldset>
+                    <legend>Sign out</legend>
+                    <br>
+                    <input class="btn-lg btn-primary" type="submit" name="submit" value="Sign Out">
+                  </fieldset>
+                </form>
+              </div> <!-- End Sign-Out Form-->
+
+            <div class="col-lg-6" id="changePasswordForm">
+            <form id="change-password">
+              <fieldset>
+                <legend>Change Password</legend>
+                <input class="text-center form-control" type="password" name="passwords[old]" id="old-password" placeholder="Enter Old Password">
+                <input class="text-center form-control" type="password" name="passwords[new]" id="new-password" placeholder="Enter New Password">
+                <input class="btn-lg btn-primary" type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div> <!-- End Change PW Form-->
+      </div> <!-- End Row -->
+    </div> <!-- End Container -->
+    <br>
+
+    <div class="container text-center block package">
+      <div class="page-header" id="car-section">
+        <h2>Manage Car Collection</h2>
+      </div> <!-- End Page-header -->
+
+      <div class="collection-banner">Enter Car Info Below to Add to Collection</div> <!-- End Banner -->
+
+          <div class="row">
+            <div id="createCarForm">
+              <h3>Add to Collection</h3>
+              <form action="" class="form-inline" id="create-car">
+                <div class="form-group">
+                  <input class="col-lg-3 text-center form-control" type="text" name="car[make]" id="makeForm" placeholder="Make">
+                  <input class="col-lg-3 text-center form-control" type="text" name="car[model]" id="modelForm" placeholder="Model">
+                  <input class="col-lg-3 text-center form-control" type="text" name="car[year]" id="yearForm" placeholder="Year">
+                  <input class="col-lg-3 text-center form-control" type="text" name="car[color]" id="colorForm" placeholder="Color">
+                  <br>
+                  <input id="create-button" class="btn-lg btn-primary" type="submit" value="Create Car">
+                  <input id="show-button" class="btn-lg btn-primary" type="submit" value="Show All Cars" href="collection">
+                </div> <!-- End Form Group -->
+              </form>
+            </div> <!-- End Sign-Up Form-->
+          </div> <!-- End Sign-Up Row -->
+    </div> <!-- End Container -->
+    <br>
+
+    <!-- Show Car Section -->
+    <div class="container text-center block collection">
+      <div class="page-header" id="car-section">
+        <h2>Collection</h2>
+      </div> <!-- End Page-header -->
+
+      <div class="save-banner">Your changes have been saved.</div> <!-- End Banner -->
+      <div class="delete-banner">Your car has been removed.</div> <!-- End Banner -->
+
+      <!-- Show All Cars Here -->
+      <div id="content" class="content"></div>
+
+    </div> <!-- End Container -->
+    <br>
+
+    <!-- Creation of bottom navbar -->
+    <nav id="footerid" class="navbar navbar-inverse navbar-fixed-bottom">
+      <div class="nav-container">
+        <p class="navbar-text pull-right">Andy Zhong</p>
+      </div> <!-- End nav-container -->
+    </nav> <!-- End bottom navbar -->
+
+    </body>
+</html>
