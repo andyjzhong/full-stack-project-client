@@ -102,7 +102,7 @@ const showCarsSuccess = (data) => {
     event.preventDefault()
     $(event.target).siblings('.save-button, .mod-car, .cancel-button').show()
     $(event.target).siblings('.update-area').show()
-    $('.mod-button, .sell-button, .save-banner').hide()
+    $('.mod-button, .sell-button, .save-banner, .delete-banner').hide()
   })
 
   // Cancel Button Hide/Show button
